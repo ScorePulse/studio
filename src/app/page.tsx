@@ -45,7 +45,7 @@ export default function LandingPage() {
               </div>
               <Input id="password" type="password" required />
             </div>
-            <SignInButton mode="modal">
+            <SignInButton mode="modal" redirectUrl="/dashboard">
                 <Button type="submit" className="w-full">
                     Login
                 </Button>
@@ -56,7 +56,7 @@ export default function LandingPage() {
           </div>
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{' '}
-            <SignUpButton mode="modal">
+            <SignUpButton mode="modal" redirectUrl="/dashboard">
                 <Link href="#" className="underline">
                     Sign up
                 </Link>
