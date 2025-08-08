@@ -1,1 +1,6 @@
-// Flows will be imported for their side effects in this file.
+import { config } from 'dotenv';
+config();
+
+import '@/ai/flows/extract-tables-from-excel.ts';
+import '@/ai/flows/extract-kpi-metadata.ts';
+import '@/ai/flows/create-vector-embeddings.ts';
