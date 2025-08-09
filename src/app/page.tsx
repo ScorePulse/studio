@@ -1,5 +1,3 @@
-import { SignInButton, SignUpButton, auth } from '@clerk/nextjs';
-import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -7,12 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 export default function LandingPage() {
-  const { userId } = auth();
-
-  if (userId) {
-    redirect('/dashboard');
-  }
-
   return (
     <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2">
       <div className="flex items-center justify-center py-12">
@@ -45,22 +37,18 @@ export default function LandingPage() {
               </div>
               <Input id="password" type="password" required />
             </div>
-            <SignInButton mode="modal" redirectUrl="/dashboard">
-                <Button type="submit" className="w-full">
-                    Login
-                </Button>
-            </SignInButton>
+            <Button type="submit" className="w-full">
+                Login
+            </Button>
             <Button variant="outline" className="w-full">
               Login with Google
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{' '}
-            <SignUpButton mode="modal" redirectUrl="/dashboard">
-                <Link href="#" className="underline">
-                    Sign up
-                </Link>
-            </SignUpButton>
+            <Link href="#" className="underline">
+                Sign up
+            </Link>
           </div>
         </div>
       </div>
